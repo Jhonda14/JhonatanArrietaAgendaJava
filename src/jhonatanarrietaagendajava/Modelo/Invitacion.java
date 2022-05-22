@@ -48,4 +48,17 @@ public class Invitacion {
         this.quienInvita = quienInvita;
     }
 
+    public String devolverDatos() {
+
+        String datos = "---------------------\n";
+        datos = datos + "ID:	" + this.getElEvento() + "\n";
+        datos = datos + "Nombre:	" + this.getElInvitado() + "\n";
+        datos = datos + "Apellido:	" + this.getQuienInvita() + "\n";
+        return datos;
+    }
+
+    @Override
+    public String toString() {
+        return this.devolverDatos();
+    }
 }

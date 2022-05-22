@@ -105,4 +105,44 @@ public class Evento {
         this.imagenes = imagenes;
     }
 
+    public String devolverDatos() {
+        java.util.GregorianCalendar Calendario = new java.util.GregorianCalendar();
+        Calendario.setTime(this.getFechaDeRegistro());
+        int año = Calendario.get(Calendario.YEAR);
+        int mes = Calendario.get(Calendario.MONTH);
+        int dia = Calendario.get(Calendario.DAY_OF_MONTH);
+        String fechaRegistro = dia + " " + mes + " " + año;
+
+        java.util.GregorianCalendar Calendario2 = new java.util.GregorianCalendar();
+        Calendario.setTime(this.getFechaDeInicio());
+        int añoIni = Calendario2.get(Calendario.YEAR);
+        int mesIni = Calendario2.get(Calendario.MONTH);
+        int diaIni = Calendario2.get(Calendario.DAY_OF_MONTH);
+        String fechaInicio = dia + " " + mes + " " + año;
+
+        java.util.GregorianCalendar Calendario3 = new java.util.GregorianCalendar();
+        Calendario.setTime(this.getFechaDeRegistro());
+        int añofin = Calendario3.get(Calendario.YEAR);
+        int mesfin = Calendario3.get(Calendario.MONTH);
+        int diafin = Calendario3.get(Calendario.DAY_OF_MONTH);
+        String fechaFin = dia + " " + mes + " " + año;
+
+        String datos = "---------------------\n";
+        datos = datos + "ID:	" + this.getId() + "\n";
+        datos = datos + "Nombre:	" + this.getNombre() + "\n";
+        datos = datos + "Tipo:	" + this.getTipo()+ "\n";
+        datos += "Fecha	de	Registro:	" + fechaRegistro + "\n";
+        datos += "Fecha	de	Inicio:	" + fechaInicio + "\n";
+        datos += "Fecha	de	Fin:	" + fechaFin + "\n";
+        datos += "Categoria:	" + this.getCategoria()+ "\n";
+        datos += "Lugar:	" + this.getLugar()+ "\n";
+        datos += "Contacto:	" + this.getContacto()+ "\n";
+        return datos;
+    }
+
+    @Override
+    public String toString() {
+        return this.devolverDatos();
+    }
+
 }

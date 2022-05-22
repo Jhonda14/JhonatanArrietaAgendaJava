@@ -12,6 +12,7 @@ import java.util.Date;
  * @author SP
  */
 public class Persona {
+  
 
     // propiedades
     private String nombre;
@@ -22,7 +23,7 @@ public class Persona {
     private String telefono;
     private String direccion;
     private BufferedImage foto;
-    private String Contraseña;
+    private String Password;
 
     public BufferedImage getFoto() {
         return foto;
@@ -32,12 +33,12 @@ public class Persona {
         this.foto = foto;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getPassword() {
+        return Password;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
     private String id;
@@ -105,5 +106,30 @@ public class Persona {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    //Funcion informativa
 
+    public String devolverDatos() {
+        java.util.GregorianCalendar Calendario = new java.util.GregorianCalendar();
+        Calendario.setTime(this.getFechaNacimiento());
+        int año = Calendario.get(Calendario.YEAR);
+        int mes = Calendario.get(Calendario.MONTH);
+        int dia = Calendario.get(Calendario.DAY_OF_MONTH);
+        String fechaNac = dia + " " + mes + " " + año;
+
+        String datos = "---------------------\n";
+        datos = datos + "ID:	" + this.getId() + "\n";
+        datos = datos + "Nombre:	" + this.getNombre() + "\n";
+        datos = datos + "Apellido:	" + this.getApellido() + "\n";
+        datos += "Fecha	de	Nacimiento:	" + fechaNac + "\n";
+        datos += "Genero:	" + this.getGenero() + "\n";
+        datos += "Email:	" + this.getEmail() + "\n";
+        datos += "Telefono:	" + this.getTelefono() + "\n";
+        datos += "Direccion:	" + this.getDireccion() + "\n";
+        return datos;
+    }
+
+    @Override
+    public String toString() {
+        return this.devolverDatos();
+    }
 }

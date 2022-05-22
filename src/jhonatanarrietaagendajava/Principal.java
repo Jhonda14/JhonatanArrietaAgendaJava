@@ -4,6 +4,10 @@
  */
 package jhonatanarrietaagendajava;
 
+import java.awt.Dimension;
+import static java.awt.Frame.MAXIMIZED_BOTH;
+import jhonatanarrietaagendajava.Vistas.ventanaPrincipal;
+
 /**
  *
  * @author jhond
@@ -14,11 +18,15 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Ejemplo ahi");
+     ventanaPrincipal Ventana = new ventanaPrincipal();
+    Ventana.setLocationRelativeTo(null);
+    Ventana.setExtendedState(MAXIMIZED_BOTH);
+    Ventana.setVisible(true);
        
         
+   
         
-        
+       
     }
     
 }
