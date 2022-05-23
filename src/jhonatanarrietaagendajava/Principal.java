@@ -4,7 +4,6 @@
  */
 package jhonatanarrietaagendajava;
 
-import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import jhonatanarrietaagendajava.Vistas.ventanaPrincipal;
 

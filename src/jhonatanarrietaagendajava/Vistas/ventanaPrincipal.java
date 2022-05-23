@@ -4,6 +4,8 @@
  */
 package jhonatanarrietaagendajava.Vistas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
@@ -58,12 +60,12 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         menuEstadisticasEventos.add(itemMenuEstadisticasEventosMayoresAsistenciaYAudiencia);
         this.itemMenuEstadisticasEventosMasLargosYMasCortos = new JMenuItem("  Mas Largos y Mas Cortos");
         menuEstadisticasEventos.add(itemMenuEstadisticasEventosMasLargosYMasCortos);
-        
+
         this.itemMenuListarInvitacionesPorPersona = new JMenuItem(" Por Persona");
         MenuListarInvitacion.add(itemMenuListarEventosPorPersona);
         this.itemMenuListarInvitacionesPorEvento = new JMenuItem("  Por Evento");
         MenuListarInvitacion.add(itemMenuListarInvitacionesPorEvento);
-        
+
         this.menuEstadisticasInvitaciones = new JMenuItem("Estadisticas");
         MenuConsultarInvitacion.add(menuEstadisticasInvitaciones);
     }
@@ -156,6 +158,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         menuEvento.setText("Evento");
 
         itemMenuAgregarEvento.setText("Agregar");
+        itemMenuAgregarEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuAgregarEventoActionPerformed(evt);
+            }
+        });
         menuEvento.add(itemMenuAgregarEvento);
 
         itemMenuConsultarEvento.setText("Consultar");
@@ -175,6 +182,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         MenuConsultarInvitacion.setText("Invitacion");
 
         itemMenuAgregarInvitacion.setText("Agregar");
+        itemMenuAgregarInvitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuAgregarInvitacionActionPerformed(evt);
+            }
+        });
         MenuConsultarInvitacion.add(itemMenuAgregarInvitacion);
 
         jMenuItem1.setText("Consultar");
@@ -243,6 +255,20 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         VentanaLP.setVisible(true);
     }//GEN-LAST:event_itemMenuModificarPersonaActionPerformed
 
+    private void itemMenuAgregarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuAgregarEventoActionPerformed
+        // TODO add your handling code here:
+        VentanaAgregarEventos VentanaAE = new VentanaAgregarEventos(this, true);
+        VentanaAE.setLocationRelativeTo(null);
+        VentanaAE.setVisible(true);
+    }//GEN-LAST:event_itemMenuAgregarEventoActionPerformed
+
+    private void itemMenuAgregarInvitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuAgregarInvitacionActionPerformed
+        // TODO add your handling code here:
+        VentanaAgregarInvitacion VentanaAI = new VentanaAgregarInvitacion(this,true);
+        VentanaAI.setLocationRelativeTo(null);
+        VentanaAI.setVisible(true);
+    }//GEN-LAST:event_itemMenuAgregarInvitacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,16 +283,24 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -298,7 +332,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
     private javax.swing.JMenuItem itemMenuListarInvitacionesPorPersona;
     private javax.swing.JMenuItem itemMenuListarInvitacionesPorEvento;
-    
+
     private javax.swing.JMenuItem menuEstadisticasInvitaciones;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
