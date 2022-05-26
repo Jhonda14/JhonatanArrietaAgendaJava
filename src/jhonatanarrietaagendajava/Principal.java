@@ -5,7 +5,9 @@
 package jhonatanarrietaagendajava;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
-import jhonatanarrietaagendajava.Vistas.ventanaPrincipal;
+import javax.swing.JDialog;
+import jhonatanarrietaagendajava.vistas.Personas.VentanaAgregarPersonas;
+import jhonatanarrietaagendajava.vistas.VentanaPrincipal;
 
 /**
  *
@@ -17,15 +19,12 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     ventanaPrincipal Ventana = new ventanaPrincipal();
-    Ventana.setLocationRelativeTo(null);
-    Ventana.setExtendedState(MAXIMIZED_BOTH);
-    Ventana.setVisible(true);
-       
-        
-   
-        
-       
+        VentanaPrincipal Ventana = new VentanaPrincipal();
+        Ventana.setTitle(": : : Agenda Electronica : : :");
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setExtendedState(MAXIMIZED_BOTH);
+        Ventana.setVisible(true);
+
     }
-    
+
 }
